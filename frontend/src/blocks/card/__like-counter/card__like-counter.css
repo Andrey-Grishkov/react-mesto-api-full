@@ -1,0 +1,25 @@
+.card__like-counter {
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 3px;
+    margin-right: 1.56vw;
+    color: #000000;
+}
+
+@media screen and (min-width: 1281px) {
+    .card__like-counter {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card__like-counter {
+        margin-right: 4vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card__like-counter {
+        margin-right: 5.38vw;
+    }
+}

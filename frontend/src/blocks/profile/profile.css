@@ -1,0 +1,29 @@
+.profile {
+    margin: 0 15.63vw 3.91vw 15.63vw;
+    min-width: 68.75vw;
+    min-height: 9.38vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media screen and (min-width: 1281px) {
+    .profile {
+        margin: 0 0 40px 0;
+        max-width: 880px;
+        min-height: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .profile {
+        margin: 0 8.44vw 11.25vw 8.44vw;
+    }
+}

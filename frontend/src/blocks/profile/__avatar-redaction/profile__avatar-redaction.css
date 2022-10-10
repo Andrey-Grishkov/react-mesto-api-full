@@ -1,0 +1,17 @@
+.profile__avatar-redaction {
+    border-radius: 50%;
+    background-image: url("../../../images/profile_redaction.svg");
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+.profile__avatar-redaction:hover {
+    transition: 1s ease-in;
+    opacity: .8;
+}

@@ -1,0 +1,11 @@
+.profile__add-image {
+    object-fit: cover;
+    background-color: #000000;
+    border: none;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__add-image {
+        max-width: 16px;
+    }
+}

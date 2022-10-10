@@ -1,0 +1,9 @@
+.autorization {
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    font-family: 'Inter', Arial, sans-serif;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}

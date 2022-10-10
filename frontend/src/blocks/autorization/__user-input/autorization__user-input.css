@@ -1,0 +1,15 @@
+.autorization__user-input {
+    min-width: 358px;
+    color: #FFFFFF;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.autorization__user-input:last-of-type {
+    margin-bottom: 216px;
+}

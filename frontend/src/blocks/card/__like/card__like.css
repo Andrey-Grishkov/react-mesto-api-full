@@ -1,0 +1,32 @@
+.card__like {
+    margin-right: 1.56vw;
+    min-width: 22px;
+    min-height: 19px;
+    cursor: pointer;
+    background-image: url("../../../images/cards__like.svg");
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.card__like:hover {
+    transition: 1s ease-in;
+    opacity: .5;
+}
+
+@media screen and (min-width: 1281px) {
+    .card__like {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card__like {
+        margin-right: 4vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card__like {
+        margin-right: 5.38vw;
+    }
+}

@@ -1,0 +1,20 @@
+.footer {
+    margin: 0 15.63vw 0 15.63vw;
+    min-width: 24.84vw;
+    padding-bottom: 4.69vw;
+}
+
+@media screen and (min-width: 1281px) {
+    .footer {
+        margin: 0;
+        max-width: 318px;
+        padding-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer {
+        margin: 0 8.44vw 0 8.44vw;
+        padding-bottom: 11.25vw;
+    }
+}

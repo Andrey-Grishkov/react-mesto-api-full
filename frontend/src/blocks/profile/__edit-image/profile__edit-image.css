@@ -1,0 +1,11 @@
+.profile__edit-image {
+    object-fit: cover;
+    background-color: #000000;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__edit-image {
+        max-width: 18px;
+        max-height: 18px;
+    }
+}

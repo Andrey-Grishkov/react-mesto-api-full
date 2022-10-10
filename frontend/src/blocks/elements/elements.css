@@ -1,0 +1,17 @@
+.elements {
+    margin: 0 15.63vw 5.16vw 15.63vw;
+    min-width: 68.75vw;
+}
+
+@media screen and (min-width: 1281px) {
+    .elements {
+        margin: 0 0 66px 0;
+        max-width: 880px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .elements {
+        margin: 0 5.94vw 15vw 5.94vw;
+    }
+}

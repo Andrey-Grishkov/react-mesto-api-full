@@ -1,0 +1,26 @@
+.popup__content {
+    width: 100%;
+    margin: 15.23vw auto 15.23vw auto;
+    max-width: 430px;
+    padding-right: 430px;
+    background-color: #FFFFFF;
+    color: #000000;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__content {
+        max-width: 60vw;
+        padding-right: 60vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .popup__content {
+        margin-top: 38.44vw;
+        max-width: 88.13vw;
+        padding-right: 88.13vw;
+    }
+}

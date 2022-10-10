@@ -1,0 +1,8 @@
+@media screen and (min-width: 1281px) {
+    .page__content {
+        max-width: 880px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+}

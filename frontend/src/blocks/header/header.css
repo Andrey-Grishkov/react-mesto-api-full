@@ -1,0 +1,21 @@
+.header {
+    min-width: 68.75vw;
+    min-height: 5.78vw;
+    margin: 0 15.63vw 3.13vw 15.63vw;
+    padding-top: 3.52vw;
+    border-bottom: rgba(84, 84, 84, .7) 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 1281px) {
+    .header {
+        min-width: 880px;
+        min-height: 74px;
+        margin: 0 auto 40px auto;
+        padding-top: 45px;
+    }
+}

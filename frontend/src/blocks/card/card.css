@@ -1,0 +1,18 @@
+.card {
+    border-radius: 0.78vw;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (min-width: 1281px) {
+    .card {
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        border-radius: 3.78vw;
+    }
+}

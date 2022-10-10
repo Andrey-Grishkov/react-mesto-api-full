@@ -1,0 +1,35 @@
+.profile__add {
+    min-width: 150px;
+    min-height: 50px;
+    padding: 0;
+    margin-left: auto;
+    border: #FFFFFF 1px solid;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.profile__add:hover {
+    transition: 1s ease-in;
+    opacity: .6;
+}
+
+@media screen and (min-width: 1281px) {
+    .profile__add {
+        margin-left: 244px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile__add {
+        min-width: 100%;
+        margin: 40px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .profile__add {
+        margin-top: 36px;
+        min-width: 88.13vw;
+        min-height: 50px;
+    }
+}

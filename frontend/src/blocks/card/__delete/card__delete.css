@@ -1,0 +1,37 @@
+.card__delete {
+    right: 20px;
+    top: 20px;
+    min-width: 18px;
+    min-height: 19px;
+    cursor: pointer;
+    background: none;
+    background-image: url("../../../images/cards__delete.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border: none;
+    position: absolute;
+}
+
+.card__delete:hover {
+    transition: 1s ease-in;
+    opacity: .5;
+}
+
+@media screen and (max-width: 768px) {
+    .card__delete {
+        right: 5.21vw;
+        top: 5.21vw;
+        min-width: calc(2.34vw*1.8);
+        min-height: calc(2.47vw*1.8);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card__delete {
+        right: 20px;
+        top: 20px;
+        min-width: 18px;
+        min-height: 19px;
+    }
+}

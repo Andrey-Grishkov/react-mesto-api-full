@@ -1,0 +1,5 @@
+.popup__image-content {
+    max-width: fit-content;
+    position: relative;
+    box-sizing: border-box;
+}
