@@ -90,6 +90,6 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
-const api = new Api('https://mesto.nomoreparties.co/v1/cohort-43', headers);
+const api = new Api('https://mesto.backend.grishkov.nomoredomains.icu', headers);
 
 export default api;

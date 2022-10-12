@@ -25,7 +25,7 @@
 //scp app.js andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/backend копирование фронта
 scp -r ./controllers/* andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/backend/controllers
 scp package.json andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/backend
-
+scp api.js andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/frontend/src/utils
 
 
 
