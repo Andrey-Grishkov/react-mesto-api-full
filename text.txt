@@ -27,6 +27,22 @@ scp -r ./controllers/* andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-
 scp package.json andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/backend
 scp api.js andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/frontend/src/utils
 
+{
+    "name":"sergei",
+    "about":"sergei olive",
+    "avatar":"https://img.desktopwallpapers.ru/rocks/pics/wide/1920x1200/27640f370156a0e0ae3ee9608fc8480a.jpg",
+    "email":"sergei@mail.com",
+    "password":"788A"
+}
+
+{
+    "email":"sergei@mail.com",
+    "password":"788A"
+}
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ2YmRkM2JlM2UzNmYyZTg1NDM3MWEiLCJpYXQiOjE2NjU1ODA1MzgsImV4cCI6MTY2NjE4NTMzOH0.Eh2NeI0lxck0d2yxM19_4zZMccA_jCXSeXpwHF9hGDc"
+}
 
 
 

@@ -1,4 +1,4 @@
-const baseUrl = 'https://auth.nomoreparties.co';
+const baseUrl = 'https://mesto.backend.grishkov.nomoredomains.icu';
 
 function checkResponse(res) {
   if (res.ok) {
