@@ -1,8 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const router = require('./routes/index');
 const userSign = require('./routes/userSign');
 const errorHandler = require('./middlewares/errorHandler');
@@ -26,9 +28,19 @@ app.listen(PORT, () => {
   console.log(`Сервер запущен. Порт ${PORT}`);
 });
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
+app.use(requestLogger);
+
 app.use('/', userSign);
 
 app.use(router);
+
+app.use(errorLogger);
 
 app.use(errors());
 

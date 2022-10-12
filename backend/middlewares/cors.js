@@ -4,6 +4,8 @@ const allowedCors = [
   'localhost:3000',
   'http://localhost:3000',
   'https://localhost:3000',
+  'http://mesto.front.grishkov.nomoredomains.icu/',
+  'https://mesto.front.grishkov.nomoredomains.icu/'
 ];
 
 module.exports = (req, res, next) => {
