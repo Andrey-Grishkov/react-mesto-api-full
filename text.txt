@@ -30,7 +30,7 @@ scp auth.js andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-f
 scp App.js andrey_grishkov@51.250.13.65:/home/andrey_grishkov/react-mesto-api-full/frontend/src/components
 
 
-npm run build
+npm run build - сборка фронта
 
 {
     "name":"sergei",
