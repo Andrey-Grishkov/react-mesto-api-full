@@ -17,6 +17,7 @@ module.exports = (req, res, next) => {
   res.header('Access-Control-Allow-Origin', origin);
   res.header('Access-Control-Allow-Origin', "*");
   res.header('Access-Control-Allow-Credentials', true);
+  res.set("Content-Type", "application/json");
   }
 
   if (method === 'OPTIONS') {

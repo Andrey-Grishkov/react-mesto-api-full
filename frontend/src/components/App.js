@@ -14,8 +14,7 @@ import Register from './Register';
 import InfoTooltip from './InfoTooltip';
 import ProtectedRoute from './ProtectedRoute';
 import { Route, Switch, useHistory } from 'react-router-dom';
-
-import { register, authorize, checkToken } from '../utils/auth.js';
+import * as auth from "../utils/auth";
 
 function App() {
   const [isOpenEditAvatar, setIsOpenEditAvatar] = useState(false);
@@ -31,10 +30,8 @@ function App() {
   const [infoTooltip, setInfoTooltip] = useState(false);
 
   const handleCheckToken = () => {
-    if (localStorage.getItem('jwt')) {
-      const token = localStorage.getItem('jwt');
-
-      checkToken(token)
+      auth
+        .checkToken()
         .then((res) => {
           if (res) {
             setLoggedIn(true);
@@ -45,7 +42,6 @@ function App() {
         .catch((err) => {
           console.log(err);
         });
-    }
   };
 
   useEffect(() => {
@@ -161,11 +157,11 @@ function App() {
   };
 
   const onLogin = (userEmail, password) => {
-    authorize(userEmail, password)
+    auth
+      .authorize(userEmail, password)
       .then((res) => {
         if (res) {
           setLoggedIn(true);
-          localStorage.setItem('jwt', res.token);
           setUserEmail(userEmail);
           history.push('/');
           console.log(userEmail);
@@ -178,7 +174,8 @@ function App() {
   };
 
   const onRegister = (userEmail, password) => {
-    register(userEmail, password)
+    auth
+      .register(userEmail, password)
       .then((res) => {
         if (res) {
           setInfoTooltip(true);
@@ -194,7 +191,6 @@ function App() {
   };
 
   function handleLogExit() {
-    localStorage.removeItem('jwt');
     setLoggedIn(false);
     history.push('/sign-in');
   }
