@@ -1,16 +1,30 @@
 import PopupWithForm from './PopupWithForm';
 import React from 'react';
+import { useState, useEffect } from 'react';
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
-  const cardNameRef = React.useRef();
-  const cardLinkRef = React.useRef();
+  const [name, setName] = useState('');
+  const [link, setLink] = useState('');
+
+  useEffect(() => {
+    setName('');
+    setLink('');
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddPlace({
-      name: cardNameRef.current.value,
-      link: cardLinkRef.current.value,
+      name,
+      link
     });
+  }
+
+  function handleChangeName (e) {
+    setName(e.target.value);
+  }
+
+  function handleChangeLink (e) {
+    setLink(e.target.value);
   }
 
   return (
@@ -26,23 +40,23 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
         className='popup__user-input popup__user-input_input_card-title'
         id='input-title'
         type='text'
-        required
         placeholder='Название'
         minLength='2'
         maxLength='30'
         name='placeName'
-        ref={cardNameRef}
+        required value={name ? name : ''}
+        onChange={handleChangeName}
       />
       <span className='popup__error' id='input-title-error'></span>
       <input
         className='popup__user-input popup__user-input_input_card-image'
         type='url'
         id='input-url'
-        required
         placeholder='Ссылка на картинку'
         minLength='2'
         name='link'
-        ref={cardLinkRef}
+        required value={link ? link : ''}
+        onChange={handleChangeLink}
       />
       <span className='popup__error' id='input-url-error'></span>
     </PopupWithForm>

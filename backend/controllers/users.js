@@ -11,7 +11,11 @@ const login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
-      res.send({ token });
+      res
+        .cookie('jwt', token)
+        .send({
+          message: 'Успешная авторизация',
+        });
     })
     .catch(next);
 };
@@ -19,7 +23,7 @@ const login = (req, res, next) => {
 const getUsers = (req, res, next) => {
   User.find({})
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     }).catch(next);
 };
 
@@ -81,7 +85,7 @@ const updateUserProfile = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Ошибка 404: Пользователь не найден');
       }
-      return res.send({ data: user });
+      return res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -103,7 +107,7 @@ const updateUserAvatar = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Ошибка 404: Пользователь не найден');
       }
-      return res.send({ data: user });
+      return res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

@@ -7,7 +7,7 @@ const { ok200 } = require('../utils/errorsCodes');
 const getCards = (req, res, next) => {
   Card.find({})
     .then((card) => {
-      res.send({ data: card });
+      res.send(card);
     })
     .catch(next);
 };
@@ -17,7 +17,7 @@ const createCard = (req, res, next) => {
   const userId = req.user._id;
 
   Card.create({ name, link, owner: userId })
-    .then((card) => { res.send({ data: card }); })
+    .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Ошибка 400: Переданы некорректные данные'));
@@ -53,11 +53,12 @@ const likeCard = (req, res, next) => {
     req.params.cardId,
     { $addToSet: { likes: req.user._id } },
     { new: true },
-  ).then((card) => {
+  ).
+  then((card) => {
     if (!card) {
       throw new NotFoundError('Ошибка 404: Карточка не найдена');
     }
-    return res.send({ data: card });
+    return res.send(card);
   }).catch((err) => {
     if (err.name === 'CastError') {
       next(new BadRequestError('Ошибка 400: Некорректный id карточки'));
@@ -76,7 +77,7 @@ const dislikeCard = (req, res, next) => {
     if (!card) {
       throw new NotFoundError('Ошибка 404: Карточка не найдена');
     }
-    return res.status(ok200).send({ data: card });
+    return res.status(ok200).send(card);
   })
     .catch((err) => {
       if (err.name === 'CastError') {

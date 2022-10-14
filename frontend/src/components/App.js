@@ -33,7 +33,7 @@ function App() {
       auth
         .checkToken()
         .then((res) => {
-          if (res) {
+          if (res.ok) {
             setLoggedIn(true);
             setUserEmail(res.data.email);
             history.push('/');
@@ -58,7 +58,7 @@ function App() {
     if (loggedIn){
     api
       .getUserInfo()
-      .then((res) => setCurrentUser(res))
+      .then((res) => setCurrentUser(res.message))
       .catch((err) => console.log(`Ошибка: ${err}`));
   }}, [loggedIn]);
 
@@ -194,11 +194,6 @@ function App() {
     setLoggedIn(false);
     history.push('/sign-in');
   }
-
-  const paroleInit = {
-    post: 'hhiklklh@mer.tu',
-    parol: 'jji',
-  };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

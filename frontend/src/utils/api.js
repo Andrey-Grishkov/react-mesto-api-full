@@ -21,15 +21,13 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  handleAddCard(cardData) {
+  handleAddCard(data) {
+    console.log(data);
     return fetch(`${this._url}/cards`, {
       method: 'POST',
       headers: this._headers,
-      credentials: "include",
-      body: JSON.stringify({
-        name: cardData.name,
-        link: cardData.link,
-      }),
+      body: JSON.stringify(data),
+      credentials: "include"
     }).then(this._checkResponse);
   }
 
