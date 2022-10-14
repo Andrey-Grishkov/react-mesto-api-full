@@ -7,18 +7,14 @@ function checkResponse(res) {
   return Promise.reject(`Ошибка: ${res.status}`);
 }
 
-export const register = (email, password) => {
-  console.log(email, password);
+export const register = (data) => {
   return fetch(`${baseUrl}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     credentials: "include",
-    body: JSON.stringify({
-      password: password,
-      email: email,
-    }),
+    body: JSON.stringify(data),
   }).then(checkResponse);
 };
 

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link, withRouter, useHistory } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 function Register({ onRegister }) {
-  const [userEmail, setUserEmail] = React.useState('');
+  const [email, setUserEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [confirmPassword, setConfirmPassword] = React.useState('');
-  const history = useHistory();
 
   function handleSubmit(e) {
     e.preventDefault();
-    onRegister(userEmail, password);
+    const data = {email, password};
+    console.log(data);
+    onRegister(data);
   }
 
   return (
@@ -25,7 +25,7 @@ function Register({ onRegister }) {
           minLength='2'
           maxLength='40'
           name='userEmail'
-          value={userEmail}
+          value={email}
           onChange={(e) => setUserEmail(e.target.value)}
         />
         <input

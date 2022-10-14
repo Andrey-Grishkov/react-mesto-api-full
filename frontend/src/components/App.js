@@ -164,7 +164,6 @@ function App() {
           setLoggedIn(true);
           setUserEmail(userEmail);
           history.push('/');
-          console.log(userEmail);
         }
       })
       .catch((err) => {
@@ -173,9 +172,9 @@ function App() {
       });
   };
 
-  const onRegister = (userEmail, password) => {
+  const onRegister = (data) => {
     auth
-      .register(userEmail, password)
+      .register(data)
       .then((res) => {
         if (res) {
           setInfoTooltip(true);
