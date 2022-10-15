@@ -53,19 +53,19 @@ const likeCard = (req, res, next) => {
     req.params.cardId,
     { $addToSet: { likes: req.user._id } },
     { new: true },
-  ).
-  then((card) => {
-    if (!card) {
-      throw new NotFoundError('Ошибка 404: Карточка не найдена');
-    }
-    return res.send(card);
-  }).catch((err) => {
-    if (err.name === 'CastError') {
-      next(new BadRequestError('Ошибка 400: Некорректный id карточки'));
-      return;
-    }
-    next(err);
-  });
+  )
+    .then((card) => {
+      if (!card) {
+        throw new NotFoundError('Ошибка 404: Карточка не найдена');
+      }
+      return res.send(card);
+    }).catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('Ошибка 400: Некорректный id карточки'));
+        return;
+      }
+      next(err);
+    });
 };
 
 const dislikeCard = (req, res, next) => {

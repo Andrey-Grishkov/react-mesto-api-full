@@ -40,6 +40,10 @@ app.use('/', userSign);
 
 app.use(router);
 
+app.get('/signout', (req, res) => {
+  res.clearCookie('jwt').send({ message: 'Выход' });
+});
+
 app.use(errorLogger);
 
 app.use(errors());
